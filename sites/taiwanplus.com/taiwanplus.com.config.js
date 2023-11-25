@@ -23,7 +23,7 @@ module.exports = {
         method: 'GET',
         timeout: 5000,
         cache: { ttl: 60 * 60 * 1000 }, // 60 * 60 seconds = 1 hour
-        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36' }
+        //headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36' }
     },
 
     logo: function (context) {
@@ -34,7 +34,7 @@ module.exports = {
         const programs = []
         const scheduleDates = parseItems(context.content)
         const today = dayjs.utc(context.date).startOf('day')
-        const lastDay = today.add(1, 'day')
+        //const lastDay = today.add(1, 'day')
 
         for(let scheduleDate of scheduleDates) {
             const currentScheduleDate = new dayjs.utc(scheduleDate.date, 'YYYY/MM/DD')
