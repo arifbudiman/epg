@@ -13,7 +13,7 @@ dayjs.extend(customParseFormat)
 module.exports = {
   site: 'mncvision.id',
   days: 2,
-  url: 'https://mncvision.id/schedule/table',
+  url: 'https://www.mncvision.id/schedule/table',
   request: {
     method: 'POST',
     data: function ({ channel, date }) {
@@ -22,12 +22,16 @@ module.exports = {
       formData.append('af0rmelement', 'aformelement')
       formData.append('fdate', date.format('YYYY-MM-DD'))
       formData.append('fchannel', channel.site_id)
-      formData.append('submit', 'Search')
+      formData.append('submit', 'Cari')
 
       return formData
     },
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Referer': 'https://www.mncvision.id/schedule',
+      //'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+      //'Content-Type': 'multipart/form-data',
+      //'Origin': 'https://www.mncvision.id'
     },
     jar: null
   },
